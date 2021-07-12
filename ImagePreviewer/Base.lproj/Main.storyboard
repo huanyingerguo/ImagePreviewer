@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="17701"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -673,7 +674,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider=""/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate"/>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -703,15 +704,97 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </view>
-                </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
+                    <view key="view" id="ZXq-No-HCG">
+                        <rect key="frame" x="0.0" y="0.0" width="602" height="545"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGv-Zh-1Jm">
+                                <rect key="frame" x="0.0" y="40" width="602" height="505"/>
+                                <clipView key="contentView" id="hCs-k7-Io6">
+                                    <rect key="frame" x="0.0" y="0.0" width="602" height="505"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dta-3s-F7a" customClass="HandCursorImageView">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                            <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="image" id="Gyf-ye-OFG"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
+                                </clipView>
+                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="fHk-BJ-cCE">
+                                    <rect key="frame" x="0.0" y="489" width="602" height="16"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="hFe-fB-CC3">
+                                    <rect key="frame" x="586" y="0.0" width="16" height="505"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button horizontalHuggingPriority="251" verticalHuggingPriority="750" horizontalCompressionResistancePriority="751" translatesAutoresizingMaskIntoConstraints="NO" id="Ayc-eA-pDz">
+                                <rect key="frame" x="8" y="1" width="74" height="32"/>
+                                <buttonCell key="cell" type="push" title="自适应" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cu1-uC-CCi">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onModeBtnCliked:" target="XfG-lQ-9wD" id="KvF-hO-m8G"/>
+                                </connections>
+                            </button>
+                            <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Id8-wC-XTb">
+                                <rect key="frame" x="135" y="1" width="61" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="hAc-mp-Os9"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="缩小" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="hkb-bl-DxU">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onZoomOutBtnCliked:" target="XfG-lQ-9wD" id="5Pa-Uy-oTt"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mP6-zh-PkW">
+                                <rect key="frame" x="78" y="1" width="61" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="gM3-vS-Fu1"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="放大" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="52g-T7-Tdm">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onZoomInBtnCliked:" target="XfG-lQ-9wD" id="1yu-97-Emk"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="mP6-zh-PkW" firstAttribute="bottom" secondItem="Ayc-eA-pDz" secondAttribute="bottom" id="07a-D9-mWu"/>
+                            <constraint firstItem="Ayc-eA-pDz" firstAttribute="leading" secondItem="ZXq-No-HCG" secondAttribute="leading" constant="15" id="1c1-MX-O3Z"/>
+                            <constraint firstItem="Id8-wC-XTb" firstAttribute="leading" secondItem="mP6-zh-PkW" secondAttribute="trailing" constant="10" id="Cbr-Af-O7q"/>
+                            <constraint firstItem="DGv-Zh-1Jm" firstAttribute="leading" secondItem="ZXq-No-HCG" secondAttribute="leading" id="OXZ-uO-GOq"/>
+                            <constraint firstItem="mP6-zh-PkW" firstAttribute="leading" secondItem="Ayc-eA-pDz" secondAttribute="trailing" constant="10" id="PEr-Bw-MJU"/>
+                            <constraint firstAttribute="trailing" secondItem="DGv-Zh-1Jm" secondAttribute="trailing" id="WKu-h1-N6A"/>
+                            <constraint firstAttribute="bottom" secondItem="Ayc-eA-pDz" secondAttribute="bottom" constant="8" id="YIR-lD-Dsy"/>
+                            <constraint firstAttribute="bottom" secondItem="DGv-Zh-1Jm" secondAttribute="bottom" constant="40" id="e1O-bB-7dh"/>
+                            <constraint firstItem="Id8-wC-XTb" firstAttribute="bottom" secondItem="mP6-zh-PkW" secondAttribute="bottom" id="f0I-uU-IOE"/>
+                            <constraint firstItem="DGv-Zh-1Jm" firstAttribute="top" secondItem="ZXq-No-HCG" secondAttribute="top" id="orZ-i8-BJq"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ayc-eA-pDz" secondAttribute="trailing" constant="20" symbolic="YES" id="uJZ-qg-R7W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Dta-3s-F7a" id="1le-HL-fdo"/>
+                        <outlet property="modeBtn" destination="Ayc-eA-pDz" id="wsQ-So-joq"/>
+                        <outlet property="scrollView" destination="DGv-Zh-1Jm" id="8f5-Ke-3qa"/>
+                    </connections>
+                </viewController>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="731"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="image" width="600" height="505"/>
+    </resources>
 </document>
