@@ -24,13 +24,8 @@
     [super viewDidLoad];
 
     // Do any additional setup after loading the view.
-    //[self.scrollView setMagnification:10];
-    NSSize lastSize = self.imageView.frame.size;
-    [self.imageView setFrameSize:NSMakeSize(lastSize.width * 10, lastSize.height * 10)];
     self.imageView.imageScaling = NSImageScaleProportionallyUpOrDown;
-        
-    NSLog(@"位置：rect=%@", NSStringFromRect(self.imageView.frame));
-        
+
     [self registerGesture];
 }
 
@@ -48,10 +43,6 @@
     NSPanGestureRecognizer *pan = [[NSPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan2:)];
     [self.imageView addGestureRecognizer:pan];
     self.scrollView.allowsMagnification = YES;
-}
-
-- (void)magnifyWithEvent:(NSEvent *)event {
-    
 }
 
 - (void)magnifyGestureRec:(NSMagnificationGestureRecognizer *)gesture {
@@ -79,7 +70,6 @@
         NSPoint origin = NSMakePoint(point.x+xDistance, point.y+yDistance);
         NSRect rect = contentView.frame;
         rect.origin = origin;
-        NSLog(@"移动位置：rect=%@", NSStringFromRect(rect));
         [contentView setFrame:rect];
     }
 }
@@ -131,27 +121,22 @@
 
 - (void)zoomContentViweByValuue:(CGFloat)value {
     if (self.isAutoAdjust) {
-        //NSSize lastSize = self.imageView.frame.size;
-        [self.imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.centerY.mas_equalTo(self.scrollView.mas_centerY);
-            make.centerX.mas_equalTo(self.scrollView.mas_centerX);
-           // make.width.mas_equalTo(lastSize.width);
-           // make.height.mas_equalTo(lastSize.height);
-        }];
         self.isAutoAdjust = NO;
+        NSSize lastSize = self.imageView.frame.size;
+        [self.imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
+             make.centerY.mas_equalTo(self.scrollView.mas_centerY);
+             make.centerX.mas_equalTo(self.scrollView.mas_centerX);
+             make.width.mas_equalTo(lastSize.width * value);
+             make.height.mas_equalTo(lastSize.height * value);
+        }];
     }
-    
-//    NSSize lastSize = self.imageView.frame.size;
-//    NSSize magnifiedSize = NSMakeSize(lastSize.width * value, lastSize.height * value);
-//    [self.imageView setFrameSize:magnifiedSize];
 
-    NSRect bounds = self.scrollView.contentView.frame;
+    NSRect bounds = self.scrollView.documentVisibleRect;
     NSPoint center = NSMakePoint(NSMidX(bounds), NSMidY(bounds));
-    [self.imageView setFrameOrigin:center];
-
+    center = [self.scrollView.contentView convertPoint:center fromView:self.scrollView.documentView];
+    
     CGFloat manification = self.scrollView.magnification;
     [self.scrollView setMagnification:manification * value centeredAtPoint:center];
-    //[self.scrollView setMagnification:manification * value];
 }
 
 @end

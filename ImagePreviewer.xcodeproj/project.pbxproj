@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95EF2D69D74446E493E4EC3A /* libPods-ImagePreviewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8635DAD2941816CB76953470 /* libPods-ImagePreviewer.a */; };
+		F982C988269D486D004DEB9B /* SJLCenterClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F982C987269D486D004DEB9B /* SJLCenterClipView.m */; };
 		F9A26B5E26970ECC009AC672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B5D26970ECC009AC672 /* AppDelegate.m */; };
 		F9A26B6126970ECC009AC672 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B6026970ECC009AC672 /* ViewController.m */; };
 		F9A26B6326970ECF009AC672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A26B6226970ECF009AC672 /* Assets.xcassets */; };
@@ -40,6 +41,8 @@
 		5588B3B70F260BFECCE88957 /* Pods-ImagePreviewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.release.xcconfig"; path = "Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.release.xcconfig"; sourceTree = "<group>"; };
 		8635DAD2941816CB76953470 /* libPods-ImagePreviewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImagePreviewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD143A252D6ACEC7E9D45C9 /* Pods-ImagePreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.debug.xcconfig"; path = "Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.debug.xcconfig"; sourceTree = "<group>"; };
+		F982C986269D486D004DEB9B /* SJLCenterClipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJLCenterClipView.h; sourceTree = "<group>"; };
+		F982C987269D486D004DEB9B /* SJLCenterClipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJLCenterClipView.m; sourceTree = "<group>"; };
 		F9A26B5926970ECC009AC672 /* ImagePreviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePreviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A26B5C26970ECC009AC672 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9A26B5D26970ECC009AC672 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -101,7 +104,6 @@
 				DBD143A252D6ACEC7E9D45C9 /* Pods-ImagePreviewer.debug.xcconfig */,
 				5588B3B70F260BFECCE88957 /* Pods-ImagePreviewer.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -142,6 +144,8 @@
 				F9A26B6A26970ECF009AC672 /* ImagePreviewer.entitlements */,
 				F9A26BDD269838D2009AC672 /* HandCursorImageView.h */,
 				F9A26BDE269838D2009AC672 /* HandCursorImageView.m */,
+				F982C986269D486D004DEB9B /* SJLCenterClipView.h */,
+				F982C987269D486D004DEB9B /* SJLCenterClipView.m */,
 			);
 			path = ImagePreviewer;
 			sourceTree = "<group>";
@@ -330,6 +334,7 @@
 				F9A26B6126970ECC009AC672 /* ViewController.m in Sources */,
 				F9A26B6926970ECF009AC672 /* main.m in Sources */,
 				F9A26B5E26970ECC009AC672 /* AppDelegate.m in Sources */,
+				F982C988269D486D004DEB9B /* SJLCenterClipView.m in Sources */,
 				F9A26BDF269838D2009AC672 /* HandCursorImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
