@@ -712,7 +712,7 @@
                         <subviews>
                             <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGv-Zh-1Jm">
                                 <rect key="frame" x="0.0" y="40" width="602" height="505"/>
-                                <clipView key="contentView" id="hCs-k7-Io6">
+                                <clipView key="contentView" id="hCs-k7-Io6" customClass="SJLCenterClipView">
                                     <rect key="frame" x="0.0" y="0.0" width="602" height="505"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
@@ -737,14 +737,14 @@
                                 <rect key="frame" x="8" y="1" width="74" height="32"/>
                                 <buttonCell key="cell" type="push" title="自适应" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Cu1-uC-CCi">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" size="13" name=".PingFangSC-Regular"/>
+                                    <font key="font" metaFont="system"/>
                                 </buttonCell>
                                 <connections>
                                     <action selector="onModeBtnCliked:" target="XfG-lQ-9wD" id="KvF-hO-m8G"/>
                                 </connections>
                             </button>
                             <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Id8-wC-XTb">
-                                <rect key="frame" x="135" y="1" width="61" height="32"/>
+                                <rect key="frame" x="136" y="1" width="62" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="hAc-mp-Os9"/>
                                 </constraints>
@@ -757,7 +757,7 @@
                                 </connections>
                             </button>
                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="mP6-zh-PkW">
-                                <rect key="frame" x="78" y="1" width="61" height="32"/>
+                                <rect key="frame" x="78" y="1" width="62" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="gM3-vS-Fu1"/>
                                 </constraints>
@@ -795,6 +795,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="image" width="600" height="505"/>
+        <image name="image" width="261" height="68"/>
     </resources>
 </document>
