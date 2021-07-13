@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		95EF2D69D74446E493E4EC3A /* libPods-ImagePreviewer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8635DAD2941816CB76953470 /* libPods-ImagePreviewer.a */; };
-		F982C988269D486D004DEB9B /* SJLCenterClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F982C987269D486D004DEB9B /* SJLCenterClipView.m */; };
+		F982C9A5269DB1CD004DEB9B /* SJLCenterClipView.m in Sources */ = {isa = PBXBuildFile; fileRef = F982C99F269DB1CD004DEB9B /* SJLCenterClipView.m */; };
+		F982C9A6269DB1CD004DEB9B /* SJLDragScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = F982C9A0269DB1CD004DEB9B /* SJLDragScrollView.m */; };
+		F982C9A7269DB1CD004DEB9B /* HandCursorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F982C9A4269DB1CD004DEB9B /* HandCursorImageView.m */; };
 		F9A26B5E26970ECC009AC672 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B5D26970ECC009AC672 /* AppDelegate.m */; };
 		F9A26B6126970ECC009AC672 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B6026970ECC009AC672 /* ViewController.m */; };
 		F9A26B6326970ECF009AC672 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9A26B6226970ECF009AC672 /* Assets.xcassets */; };
@@ -17,7 +19,6 @@
 		F9A26B7426970ECF009AC672 /* ImagePreviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B7326970ECF009AC672 /* ImagePreviewerTests.m */; };
 		F9A26B7F26970ECF009AC672 /* ImagePreviewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B7E26970ECF009AC672 /* ImagePreviewerUITests.m */; };
 		F9A26BD626982C70009AC672 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A26BD526982C6F009AC672 /* image.png */; };
-		F9A26BDF269838D2009AC672 /* HandCursorImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26BDE269838D2009AC672 /* HandCursorImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +42,12 @@
 		5588B3B70F260BFECCE88957 /* Pods-ImagePreviewer.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.release.xcconfig"; path = "Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.release.xcconfig"; sourceTree = "<group>"; };
 		8635DAD2941816CB76953470 /* libPods-ImagePreviewer.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ImagePreviewer.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBD143A252D6ACEC7E9D45C9 /* Pods-ImagePreviewer.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ImagePreviewer.debug.xcconfig"; path = "Target Support Files/Pods-ImagePreviewer/Pods-ImagePreviewer.debug.xcconfig"; sourceTree = "<group>"; };
-		F982C986269D486D004DEB9B /* SJLCenterClipView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SJLCenterClipView.h; sourceTree = "<group>"; };
-		F982C987269D486D004DEB9B /* SJLCenterClipView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SJLCenterClipView.m; sourceTree = "<group>"; };
+		F982C99F269DB1CD004DEB9B /* SJLCenterClipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJLCenterClipView.m; path = Core/SJLCenterClipView.m; sourceTree = "<group>"; };
+		F982C9A0269DB1CD004DEB9B /* SJLDragScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SJLDragScrollView.m; path = Core/SJLDragScrollView.m; sourceTree = "<group>"; };
+		F982C9A1269DB1CD004DEB9B /* HandCursorImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HandCursorImageView.h; path = Core/HandCursorImageView.h; sourceTree = "<group>"; };
+		F982C9A2269DB1CD004DEB9B /* SJLDragScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJLDragScrollView.h; path = Core/SJLDragScrollView.h; sourceTree = "<group>"; };
+		F982C9A3269DB1CD004DEB9B /* SJLCenterClipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SJLCenterClipView.h; path = Core/SJLCenterClipView.h; sourceTree = "<group>"; };
+		F982C9A4269DB1CD004DEB9B /* HandCursorImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HandCursorImageView.m; path = Core/HandCursorImageView.m; sourceTree = "<group>"; };
 		F9A26B5926970ECC009AC672 /* ImagePreviewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ImagePreviewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9A26B5C26970ECC009AC672 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9A26B5D26970ECC009AC672 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -60,8 +65,6 @@
 		F9A26B7E26970ECF009AC672 /* ImagePreviewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewerUITests.m; sourceTree = "<group>"; };
 		F9A26B8026970ECF009AC672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9A26BD526982C6F009AC672 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
-		F9A26BDD269838D2009AC672 /* HandCursorImageView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HandCursorImageView.h; sourceTree = "<group>"; };
-		F9A26BDE269838D2009AC672 /* HandCursorImageView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HandCursorImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		F982C995269DB153004DEB9B /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F982C9A1269DB1CD004DEB9B /* HandCursorImageView.h */,
+				F982C9A4269DB1CD004DEB9B /* HandCursorImageView.m */,
+				F982C9A3269DB1CD004DEB9B /* SJLCenterClipView.h */,
+				F982C99F269DB1CD004DEB9B /* SJLCenterClipView.m */,
+				F982C9A2269DB1CD004DEB9B /* SJLDragScrollView.h */,
+				F982C9A0269DB1CD004DEB9B /* SJLDragScrollView.m */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
 		F9A26B5026970ECC009AC672 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +149,7 @@
 		F9A26B5B26970ECC009AC672 /* ImagePreviewer */ = {
 			isa = PBXGroup;
 			children = (
+				F982C995269DB153004DEB9B /* Core */,
 				F9A26B5C26970ECC009AC672 /* AppDelegate.h */,
 				F9A26B5D26970ECC009AC672 /* AppDelegate.m */,
 				F9A26B5F26970ECC009AC672 /* ViewController.h */,
@@ -142,10 +159,6 @@
 				F9A26B6726970ECF009AC672 /* Info.plist */,
 				F9A26B6826970ECF009AC672 /* main.m */,
 				F9A26B6A26970ECF009AC672 /* ImagePreviewer.entitlements */,
-				F9A26BDD269838D2009AC672 /* HandCursorImageView.h */,
-				F9A26BDE269838D2009AC672 /* HandCursorImageView.m */,
-				F982C986269D486D004DEB9B /* SJLCenterClipView.h */,
-				F982C987269D486D004DEB9B /* SJLCenterClipView.m */,
 			);
 			path = ImagePreviewer;
 			sourceTree = "<group>";
@@ -331,11 +344,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F982C9A6269DB1CD004DEB9B /* SJLDragScrollView.m in Sources */,
+				F982C9A7269DB1CD004DEB9B /* HandCursorImageView.m in Sources */,
 				F9A26B6126970ECC009AC672 /* ViewController.m in Sources */,
 				F9A26B6926970ECF009AC672 /* main.m in Sources */,
 				F9A26B5E26970ECC009AC672 /* AppDelegate.m in Sources */,
-				F982C988269D486D004DEB9B /* SJLCenterClipView.m in Sources */,
-				F9A26BDF269838D2009AC672 /* HandCursorImageView.m in Sources */,
+				F982C9A5269DB1CD004DEB9B /* SJLCenterClipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

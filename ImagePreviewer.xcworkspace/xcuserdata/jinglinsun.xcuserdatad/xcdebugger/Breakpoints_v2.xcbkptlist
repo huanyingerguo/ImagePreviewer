@@ -7,15 +7,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "0FB45F85-F06B-47C9-AFB5-1515E2AA3A0C"
+            uuid = "A18AEC66-4E7C-4772-8C34-4BE1B7919BD1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ImagePreviewer/SJLCenterClipView.m"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "23"
-            endingLineNumber = "23"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
             landmarkName = "-constrainBoundsRect:"
             landmarkType = "7">
          </BreakpointContent>

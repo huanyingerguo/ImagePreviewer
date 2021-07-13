@@ -710,7 +710,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="602" height="545"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGv-Zh-1Jm">
+                            <scrollView borderType="none" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DGv-Zh-1Jm" customClass="SJLDragScrollView">
                                 <rect key="frame" x="0.0" y="40" width="602" height="505"/>
                                 <clipView key="contentView" id="hCs-k7-Io6" customClass="SJLCenterClipView">
                                     <rect key="frame" x="0.0" y="0.0" width="602" height="505"/>
