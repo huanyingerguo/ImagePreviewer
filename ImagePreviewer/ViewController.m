@@ -38,24 +38,17 @@
 
 #pragma mark- IBAction
 - (IBAction)onModeBtnCliked:(NSButton *)sender {
-    if (!self.scrollView.isAutoAdjust) {
-        self.scrollView.isAutoAdjust = YES;
-        [self.imageView mas_remakeConstraints:^(MASConstraintMaker *make) {
-            make.edges.equalTo(self.imageView.superview);
-        }];
-    }
-    
-    [self.scrollView setMagnification:1.0];
+    [self.scrollView adatptiveDocumentView];
 }
 
 - (IBAction)onZoomInBtnCliked:(NSButton *)sender {
     CGFloat value = (1.0 + 0.25);
-    [self.scrollView zoomContentViweByValuue:value];
+    [self.scrollView zoomContentViewByValue:value];
 }
 
 - (IBAction)onZoomOutBtnCliked:(NSButton *)sender {
     CGFloat value = (1.0 - 0.25);
-    [self.scrollView zoomContentViweByValuue:value];
+    [self.scrollView zoomContentViewByValue:value];
 }
 
 

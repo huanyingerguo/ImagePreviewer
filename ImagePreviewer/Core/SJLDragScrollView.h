@@ -13,7 +13,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign) BOOL  isAutoAdjust;
 
 - (void)registerGesture;
-- (void)zoomContentViweByValuue:(CGFloat)value;
+- (void)zoomContentViewByValue:(CGFloat)value;
+- (void)adatptiveDocumentView;
 @end
 
 NS_ASSUME_NONNULL_END

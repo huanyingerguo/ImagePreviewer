@@ -722,7 +722,6 @@
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="image" id="Gyf-ye-OFG"/>
                                         </imageView>
                                     </subviews>
-                                    <color key="backgroundColor" name="systemGreenColor" catalog="System" colorSpace="catalog"/>
                                 </clipView>
                                 <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="fHk-BJ-cCE">
                                     <rect key="frame" x="0.0" y="489" width="602" height="16"/>

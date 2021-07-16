@@ -23,13 +23,15 @@
     NSPanGestureRecognizer *pan = [[NSPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan2:)];
     [self addGestureRecognizer:pan];
     self.allowsMagnification = YES;
+    
+    self.backgroundColor = [NSColor colorWithRed:0 green:1 blue:0 alpha:1];
 }
 
 - (void)magnifyGestureRec:(NSMagnificationGestureRecognizer *)gesture {
     NSGestureRecognizerState state = gesture.state;
     if (state == NSGestureRecognizerStateEnded) {
         CGFloat value = (1.0 + gesture.magnification);
-        [self zoomContentViweByValuue:value];
+        [self zoomContentViewByValue:value];
     }
 }
 
@@ -74,16 +76,16 @@
     }
 }
 
-- (void)zoomContentViweByValuue:(CGFloat)value {
+- (void)zoomContentViewByValue:(CGFloat)value {
     if (self.isAutoAdjust) {
         self.isAutoAdjust = NO;
-//        NSSize lastSize = self.documentView.frame.size;
-//        [self.documentView mas_remakeConstraints:^(MASConstraintMaker *make) {
-//             make.centerY.mas_equalTo(self.mas_centerY);
-//             make.centerX.mas_equalTo(self.mas_centerX);
-//             make.width.mas_equalTo(lastSize.width * value);
-//             make.height.mas_equalTo(lastSize.height * value);
-//        }];
+        NSSize lastSize = self.frame.size;
+        [self.documentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.mas_centerX);
+            make.centerY.equalTo(self.mas_centerY);
+            make.width.mas_equalTo(lastSize.width);
+            make.height.mas_equalTo(lastSize.height);
+        }];
     }
 
     NSRect bounds = self.documentVisibleRect;
@@ -92,5 +94,16 @@
     
     CGFloat manification = self.magnification;
     [self setMagnification:manification * value centeredAtPoint:center];
+}
+
+- (void)adatptiveDocumentView {
+    if (!self.isAutoAdjust) {
+        self.isAutoAdjust = YES;
+        [self.documentView mas_remakeConstraints:^(MASConstraintMaker *make) {
+            make.edges.equalTo(self.documentView.superview);
+        }];
+    }
+    
+    [self setMagnification:1.0];
 }
 @end
