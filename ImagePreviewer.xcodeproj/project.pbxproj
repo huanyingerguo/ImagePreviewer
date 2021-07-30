@@ -19,6 +19,7 @@
 		F9A26B7426970ECF009AC672 /* ImagePreviewerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B7326970ECF009AC672 /* ImagePreviewerTests.m */; };
 		F9A26B7F26970ECF009AC672 /* ImagePreviewerUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9A26B7E26970ECF009AC672 /* ImagePreviewerUITests.m */; };
 		F9A26BD626982C70009AC672 /* image.png in Resources */ = {isa = PBXBuildFile; fileRef = F9A26BD526982C6F009AC672 /* image.png */; };
+		F9D7A65126B3ADC9000D2DC9 /* HoverView.m in Sources */ = {isa = PBXBuildFile; fileRef = F9D7A64F26B3ADC9000D2DC9 /* HoverView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		F9A26B7E26970ECF009AC672 /* ImagePreviewerUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ImagePreviewerUITests.m; sourceTree = "<group>"; };
 		F9A26B8026970ECF009AC672 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9A26BD526982C6F009AC672 /* image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image.png; sourceTree = "<group>"; };
+		F9D7A64F26B3ADC9000D2DC9 /* HoverView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HoverView.m; sourceTree = "<group>"; };
+		F9D7A65026B3ADC9000D2DC9 /* HoverView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HoverView.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,6 +152,7 @@
 		F9A26B5B26970ECC009AC672 /* ImagePreviewer */ = {
 			isa = PBXGroup;
 			children = (
+				F9D7A64E26B3ADA0000D2DC9 /* Controll */,
 				F982C995269DB153004DEB9B /* Core */,
 				F9A26B5C26970ECC009AC672 /* AppDelegate.h */,
 				F9A26B5D26970ECC009AC672 /* AppDelegate.m */,
@@ -187,6 +191,15 @@
 				F9A26BD526982C6F009AC672 /* image.png */,
 			);
 			name = Resource;
+			sourceTree = "<group>";
+		};
+		F9D7A64E26B3ADA0000D2DC9 /* Controll */ = {
+			isa = PBXGroup;
+			children = (
+				F9D7A65026B3ADC9000D2DC9 /* HoverView.h */,
+				F9D7A64F26B3ADC9000D2DC9 /* HoverView.m */,
+			);
+			path = Controll;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +363,7 @@
 				F9A26B6926970ECF009AC672 /* main.m in Sources */,
 				F9A26B5E26970ECC009AC672 /* AppDelegate.m in Sources */,
 				F982C9A5269DB1CD004DEB9B /* SJLCenterClipView.m in Sources */,
+				F9D7A65126B3ADC9000D2DC9 /* HoverView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

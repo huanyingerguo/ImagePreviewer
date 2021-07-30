@@ -706,7 +706,7 @@
             <objects>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
                 <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" id="ZXq-No-HCG">
+                    <view key="view" id="ZXq-No-HCG" customClass="HoverView">
                         <rect key="frame" x="0.0" y="0.0" width="602" height="545"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
@@ -720,6 +720,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="505"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                             <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="image" id="Gyf-ye-OFG"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="backgroundColor">
+                                                    <color key="value" name="systemPinkColor" catalog="System" colorSpace="catalog"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                         </imageView>
                                     </subviews>
                                 </clipView>
@@ -768,6 +773,19 @@
                                     <action selector="onZoomInBtnCliked:" target="XfG-lQ-9wD" id="1yu-97-Emk"/>
                                 </connections>
                             </button>
+                            <button horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="jQv-zJ-84C">
+                                <rect key="frame" x="202" y="1" width="62" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="TFY-sc-hqB"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="切换" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="QNC-1D-u2d">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onExpandBtnCliked:" target="XfG-lQ-9wD" id="oMg-d9-HMa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <constraints>
                             <constraint firstItem="mP6-zh-PkW" firstAttribute="bottom" secondItem="Ayc-eA-pDz" secondAttribute="bottom" id="07a-D9-mWu"/>
@@ -779,8 +797,11 @@
                             <constraint firstAttribute="bottom" secondItem="Ayc-eA-pDz" secondAttribute="bottom" constant="8" id="YIR-lD-Dsy"/>
                             <constraint firstAttribute="bottom" secondItem="DGv-Zh-1Jm" secondAttribute="bottom" constant="40" id="e1O-bB-7dh"/>
                             <constraint firstItem="Id8-wC-XTb" firstAttribute="bottom" secondItem="mP6-zh-PkW" secondAttribute="bottom" id="f0I-uU-IOE"/>
+                            <constraint firstItem="jQv-zJ-84C" firstAttribute="centerY" secondItem="Id8-wC-XTb" secondAttribute="centerY" id="gf6-zj-RBx"/>
+                            <constraint firstItem="jQv-zJ-84C" firstAttribute="leading" secondItem="Id8-wC-XTb" secondAttribute="trailing" constant="18" id="mYF-zJ-Frq"/>
                             <constraint firstItem="DGv-Zh-1Jm" firstAttribute="top" secondItem="ZXq-No-HCG" secondAttribute="top" id="orZ-i8-BJq"/>
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ayc-eA-pDz" secondAttribute="trailing" constant="20" symbolic="YES" id="uJZ-qg-R7W"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="jQv-zJ-84C" secondAttribute="trailing" constant="20" symbolic="YES" id="y42-de-etw"/>
                         </constraints>
                     </view>
                     <connections>

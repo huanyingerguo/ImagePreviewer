@@ -8,13 +8,15 @@
 #import <Cocoa/Cocoa.h>
 
 NS_ASSUME_NONNULL_BEGIN
+typedef void(^MagnifyDidChanged) (void);
 
 @interface SJLDragScrollView : NSScrollView
 @property (assign) BOOL  isAutoAdjust;
-
+@property (copy) MagnifyDidChanged magnifyChanged;
+             
 - (void)registerGesture;
 - (void)zoomContentViewByValue:(CGFloat)value;
-- (void)adatptiveDocumentView;
+- (void)adaptiveDocumentView;
 @end
 
 NS_ASSUME_NONNULL_END

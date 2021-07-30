@@ -19,9 +19,17 @@
     // Drawing code here.
 }
 
-
-- (void)resetCursorRects {
-    [self addCursorRect:self.bounds cursor:[NSCursor closedHandCursor]];
+- (void)mouseDown:(NSEvent *)event {
+    self.isMousedown = YES;
+    [super mouseDown:event];
 }
 
+- (void)mouseUp:(NSEvent *)event {
+    self.isMousedown = NO;
+    [super mouseUp:event];
+}
+
+- (BOOL)mouseDownCanMoveWindow {
+    return YES;
+}
 @end
