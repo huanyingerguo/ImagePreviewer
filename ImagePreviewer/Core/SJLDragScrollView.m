@@ -23,7 +23,7 @@
 
 - (void)awakeFromNib {
     self.allowsMagnification = YES;
-    self.panGesture = [[NSPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan2:)];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollViewDidScroll:) name:NSViewBoundsDidChangeNotification object:self.contentView];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(magnifyDidChangeNotification:) name:NSScrollViewDidEndLiveMagnifyNotification object:nil];
     [self adaptiveDocumentView];
     [self udpateCursor];
@@ -45,11 +45,17 @@
  */
 
 - (void)registerGesture {
-    [self addGestureRecognizer:self.panGesture];
+    if (!self.panGesture) {
+        self.panGesture = [[NSPanGestureRecognizer alloc]initWithTarget:self action:@selector(handlePan2:)];
+        [self addGestureRecognizer:self.panGesture];
+    }
 }
 
 - (void)deRigisterGesture {
-    [self removeGestureRecognizer:self.panGesture];
+    if (self.panGesture){
+        [self removeGestureRecognizer:self.panGesture];
+        self.panGesture = nil;
+    }
 }
 
 - (void)magnifyGestureRec:(NSMagnificationGestureRecognizer *)gesture {
@@ -98,6 +104,9 @@
         self.magnifyChanged();
     }
     
+}
+
+- (void)scrollViewDidScroll:(NSNotification *)notify {
     [self udpateCursor];
 }
 
@@ -132,11 +141,41 @@
     }
     
     [self setMagnification:1.0];
-    [self udpateCursor];
 }
 
 - (void)dealloc {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)mouseDown:(NSEvent *)event {
+    [self processMouseDrag:self];
+}
+
+- (void)processMouseDrag:(NSView *)view {
+    static id mouseEventMonitor;
+    static NSPoint where, origin;
+    if ([NSEvent pressedMouseButtons] != NSEventTypeLeftMouseDown) {
+        return;
+    }
+    if (mouseEventMonitor == nil) {
+        where = [NSEvent mouseLocation];
+        origin = self.window.frame.origin;
+        mouseEventMonitor = [NSEvent addLocalMonitorForEventsMatchingMask:NSEventMaskLeftMouseDragged | NSEventMaskLeftMouseUp handler:^NSEvent *(NSEvent * event) {
+            if (event.type == NSEventTypeLeftMouseUp) {
+                if (mouseEventMonitor != nil) {
+                    [NSEvent removeMonitor:mouseEventMonitor];
+                    mouseEventMonitor = nil;
+                }
+            } else {
+                NSPoint now = [NSEvent mouseLocation];
+                origin.x += now.x - where.x;
+                origin.y += now.y - where.y;
+                [self.window setFrameOrigin:origin];
+                where = now;
+            }
+            return event;
+        }];
+    }
 }
 
 #pragma mark- Cursor
@@ -145,12 +184,10 @@
         [self registerGesture];
         self.documentCursor = [NSCursor closedHandCursor];
         //[[NSCursor closedHandCursor] set];
-        //[self addCursorRect:self.bounds cursor:[NSCursor closedHandCursor]];
     } else {
         [self deRigisterGesture];
         self.documentCursor = [NSCursor arrowCursor];
         //[[NSCursor arrowCursor] set];
-        //[self addCursorRect:self.bounds cursor:[NSCursor arrowCursor]];
     }
 }
 
