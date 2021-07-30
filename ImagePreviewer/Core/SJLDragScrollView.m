@@ -24,7 +24,7 @@
 - (void)awakeFromNib {
     self.allowsMagnification = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(scrollViewDidScroll:) name:NSViewBoundsDidChangeNotification object:self.contentView];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(magnifyDidChangeNotification:) name:NSScrollViewDidEndLiveMagnifyNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(magnifyDidChangeNotification:) name:NSScrollViewDidEndLiveMagnifyNotification object:self];
     [self adaptiveDocumentView];
     [self udpateCursor];
 }
@@ -83,12 +83,16 @@
     else if(rec.state == NSGestureRecognizerStateEnded){
     }
     else{
-        NSPoint new = NSMakePoint(origin.x - (point.x - beginPoint.x), origin.y + point.y - beginPoint.y);
+        NSPoint new = NSMakePoint(origin.x - (point.x - beginPoint.x)/self.magnification, origin.y + (point.y - beginPoint.y)/self.magnification);
         [contentView setBoundsOrigin:new];
     }
 }
 
 - (void)magnifyDidChangeNotification:(NSNotification *)notification {
+    if (notification.object != self) {
+        return;
+    }
+    
     if (self.isAutoAdjust) {
         self.isAutoAdjust = NO;
         NSSize lastSize = self.frame.size;
@@ -107,6 +111,9 @@
 }
 
 - (void)scrollViewDidScroll:(NSNotification *)notify {
+    if (notify.object != self.contentView) {
+        return;
+    }
     [self udpateCursor];
 }
 
