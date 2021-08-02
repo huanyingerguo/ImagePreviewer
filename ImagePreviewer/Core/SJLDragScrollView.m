@@ -83,7 +83,7 @@
     else if(rec.state == NSGestureRecognizerStateEnded){
     }
     else{
-        NSPoint new = NSMakePoint(origin.x - (point.x - beginPoint.x)/self.magnification, origin.y + (point.y - beginPoint.y)/self.magnification);
+        NSPoint new = NSMakePoint(origin.x - (point.x - beginPoint.x) / self.magnification, origin.y + (point.y - beginPoint.y) / self.magnification);
         [contentView setBoundsOrigin:new];
     }
 }
